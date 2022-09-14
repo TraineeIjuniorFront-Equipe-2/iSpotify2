@@ -1,0 +1,15 @@
+.dashboard {
+    overflow-y: auto;
+    background: var(--gray);
+    padding: 96px 24px 24px;
+  }
+
+  @media (max-width: 768px) {
+    .dashboard {
+      padding: 24px;
+    }
+  
+    .album-icons {
+      margin: 24px 0;
+    }
+  }

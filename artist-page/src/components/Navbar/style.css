@@ -1,0 +1,26 @@
+.navbar {
+    padding: 12px;
+  }
+  
+  .navbar header {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+  }
+  
+  .ispotify {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .logoName {
+    font-size: 1.125rem;
+    align-self: center;
+    }
+
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    align-items: flex-start;
+  }
+}
