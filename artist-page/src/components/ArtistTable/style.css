@@ -3,22 +3,32 @@
     flex-wrap:wrap;
     justify-content: center;
     align-content: center;
+    padding: 21px;
 }
 
 .Artist{
-    background-color: pink ;
+    background-color: var(--grayCubes) ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+
     width: 196px;
     height: 280px;
-    border: 1px solid black;
     margin-top: 3%;
     margin-right: 1%;
-    border-radius: 10px 10px 10px;
+    padding: 13px;
+
+    border-radius: 10px;
     position: relative;
+
+    cursor: pointer;
+}
+
+.Artist:hover{
+    background-color: rgba(255, 255, 255, 0.064);
 }
 
 .Artist p{
-    font-size: 15px;
-    color: black;
+    font-size: 16px;
+    color: white;
     position:absolute;
-    
+    opacity: 50%;
 }

@@ -1,7 +1,8 @@
 .dashboard {
     overflow-y: auto;
     background: var(--gray);
-    padding: 96px 24px 24px;
+    padding: 62px 24px 24px;/*padding: 96px 24px 24px;*/
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
   }
 
   @media (max-width: 768px) {

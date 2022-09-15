@@ -5,34 +5,54 @@ const ArtistTable = () => {
         <div className="Containner">
             
             <div className="Artist">
-                <p>Engenheiros do Hawaii</p>
+                <span class=""></span> 
+                <span class=""></span>
+                <p>Artista</p>
             </div>
             <div className="Artist">
-                <p>Cidade Negra</p>
+                <span class=""></span> 
+                <span class=""></span>
+                <p>Artista</p>
             </div>
             <div className="Artist">
-                <p>Capital Inicial</p>
+                <span class=""></span> 
+                <span class=""></span>
+                <p>Artista</p>
             </div>
             <div className="Artist">
-                <p>Skank</p>
+                <span class=""></span> 
+                <span class=""></span>
+                <p>Artista</p>
             </div>
             <div className="Artist">
-                <p>Paralamas do Sucesso</p>
+                <span class=""></span> 
+                <span class=""></span>
+                <p>Artista</p>
             </div>
             <div className="Artist">
-                <p>Lulu Santos</p>
+                <span class=""></span> 
+                <span class=""></span>
+                <p>Artista</p>
             </div>
             <div className="Artist">
-                <p>Cazuza</p>
+                <span class=""></span> 
+                <span class=""></span>
+                <p>Artista</p>
             </div>
             <div className="Artist">
-                <p>Kid Abelha</p>
+                <span class=""></span> 
+                <span class=""></span>
+                <p>Artista</p>
             </div>
             <div className="Artist">
-                <p>Biquini Cavadão</p>
+                <span class=""></span> 
+                <span class=""></span>
+                <p>Artista</p>
             </div>
             <div className="Artist">
-                <p>O rappa</p>
+                <span class=""></span> 
+                <span class=""></span>
+                <p>Artista</p>
             </div>
             
         </div>

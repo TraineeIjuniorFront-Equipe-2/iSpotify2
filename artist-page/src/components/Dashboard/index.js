@@ -6,7 +6,7 @@ const Dashboard = () => {
   return (
     <main className="dashboard">
       <section>
-        <h3>Artistas</h3>
+        <h2>Artistas</h2>
       </section>
       <ArtistTable/>
     </main>
