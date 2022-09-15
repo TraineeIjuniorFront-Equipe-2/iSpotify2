@@ -1,4 +1,5 @@
 import "./style.css";
+import ArtistTable from "../ArtistTable"
 
 
 const Dashboard = () => {
@@ -7,6 +8,7 @@ const Dashboard = () => {
       <section>
         <h3>Artistas</h3>
       </section>
+      <ArtistTable/>
     </main>
   );
 };

@@ -1,0 +1,24 @@
+.Containner{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.Artist{
+    background-color: pink ;
+    width: 196px;
+    height: 280px;
+    border: 1px solid black;
+    margin-top: 3%;
+    margin-right: 1%;
+    border-radius: 10px 10px 10px;
+    position: relative;
+}
+
+.Artist p{
+    font-size: 15px;
+    color: black;
+    position:absolute;
+    
+}
