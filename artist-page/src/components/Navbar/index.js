@@ -1,4 +1,7 @@
 import ispotify from "../../assets/icons/ispotify.png";
+import Heart from "../../assets/icons/favorite.png";
+import Logout from "../../assets/icons/logout.png";
+import Disk from "../../assets/icons/album.png";
 import "./style.css";
 
 const Navbar = () => {
@@ -13,8 +16,8 @@ const Navbar = () => {
         <p className="artist">Artistas</p>
         <p className="music">Músicas Curtidas</p>
       </main>
-      <footer>
-        <p>Logout</p>
+      <footer className="logout">
+        <p>Logout</p><img src={Logout} alt="" />
       </footer>
     </nav>
   );
