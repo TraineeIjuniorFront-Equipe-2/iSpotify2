@@ -1,5 +1,6 @@
 .navbar {
     padding: 12px;
+    text-align: center;
   }
   
   .navbar header {
@@ -16,6 +17,33 @@
   .logoName {
     font-size: 1.125rem;
     align-self: center;
+    }
+
+    .containner{
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      
+    }
+    .containner p{
+      text-align: center;
+      padding-top: 1rem;
+    }
+
+    footer{
+      height: 76%;
+      display: flex;
+      flex-direction: column-reverse;
+
+      cursor: pointer;
+    }
+
+    footer p{
+      text-align: center;
+    }
+
+    div .containner p:hover, footer p:hover{
+      color: rgba(255, 255, 255, 0.545);
     }
 
 @media (max-width: 768px) {
