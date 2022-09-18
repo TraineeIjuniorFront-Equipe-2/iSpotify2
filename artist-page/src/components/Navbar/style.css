@@ -51,4 +51,22 @@
     display: flex;
     align-items: flex-start;
   }
+  .music{
+    margin-left: 12px;
+    
+  }
+  footer{
+    margin-left: 12px;
+  }
+  .containner{
+    display: flex;
+    flex-direction: row;
+   
+    margin-top: 15px;
+    
+  }
+  .artist {
+    margin-left: 12px;
+  }
+  
 }
