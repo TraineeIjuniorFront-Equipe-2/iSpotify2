@@ -7,7 +7,7 @@ const ArtistTable = ({ songs }) => {
         <div className="Artist" key={i}>
           <img
             src={val?.url}
-            style={{ height: val?.height, width: val?.width }}
+           // style={{ height: val?.height, width: val?.width }}
             alt="artist"
             className="artist_image"
           />

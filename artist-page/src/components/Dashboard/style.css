@@ -1,3 +1,7 @@
+.section{
+  height:100%;
+}
+
 .dashboard {
   overflow-y: auto;
   background: var(--gray);

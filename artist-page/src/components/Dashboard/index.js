@@ -9,7 +9,6 @@ import "./style.css";
 const artitsList = [
   "246dkjvS1zLTtiykXe5h60",
   "7dGJo4pcD2V6oG8kP0tJRR",
-  "5JG9GISYjRLQUJMH2C6iJ5",
   "2ye2Wgw4gimLv2eAKyk1NB",
   "4S9EykWXhStSc15wEx8QFK",
   "26dSoYclwsYLMAKD3tpOr4",
@@ -18,6 +17,11 @@ const artitsList = [
   "1mvpEXClANunyiHFtAXCxt",
   "5K4W6rqBFWDnAN6FQUkS6x",
   "2euX7vCVnJy3TVEGfc0RCl",
+  "246dkjvS1zLTtiykXe5h60",
+  "7dGJo4pcD2V6oG8kP0tJRR",
+  "2ye2Wgw4gimLv2eAKyk1NB",
+  "4S9EykWXhStSc15wEx8QFK",
+  "26dSoYclwsYLMAKD3tpOr4",
 ];
 
 const Dashboard = () => {
@@ -46,7 +50,7 @@ const Dashboard = () => {
 
   return (
     <main className="dashboard">
-      <section>
+      <section className="section">
         <h2>Artistas</h2>
         <ArtistTable songs={songs} />
       </section>
