@@ -1,16 +1,16 @@
 .dashboard {
-    overflow-y: auto;
-    background: var(--gray);
-    padding: 62px 24px 24px;/*padding: 96px 24px 24px;*/
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+  overflow-y: auto;
+  background: var(--gray);
+  padding: 62px 24px 24px; /*padding: 96px 24px 24px;*/
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 24px;
   }
 
-  @media (max-width: 768px) {
-    .dashboard {
-      padding: 24px;
-    }
-  
-    .album-icons {
-      margin: 24px 0;
-    }
+  .album-icons {
+    margin: 24px 0;
   }
+}

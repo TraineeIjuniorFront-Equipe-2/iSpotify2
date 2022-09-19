@@ -1,63 +1,22 @@
 import "./style.css";
-import "./scripts";
 
-const ArtistTable = () => {
-    return(
-        <div className="Containner">
-            
-            <div className="Artist">
-                <img src="#" alt="artist" class="artist_image"></img>
-                <span class="artist_name"></span>
-                <p>Artista</p>
-            </div>
-            <div className="Artist">
-                <img src="#" alt="artist" class="artist_image"></img>
-                <span class="artist_name"></span>
-                <p>Artista</p>
-            </div>
-            <div className="Artist">
-                <img src="#" alt="artist" class="artist_image"></img>
-                <span class="artist_name"></span>
-                <p>Artista</p>
-            </div>
-            <div className="Artist">
-                <img src="#" alt="artist" class="artist_image"></img>
-                <span class="artist_name"></span>
-                <p>Artista</p>
-            </div>
-            <div className="Artist">
-                <img src="#" alt="artist" class="artist_image"></img>
-                <span class="artist_name"></span>
-                <p>Artista</p>
-            </div>
-            <div className="Artist">
-                <img src="#" alt="artist" class="artist_image"></img>
-                <span class="artist_name"></span>
-                <p>Artista</p>
-            </div>
-            <div className="Artist">
-                <img src="#" alt="artist" class="artist_image"></img>
-                <span class="artist_name"></span>
-                <p>Artista</p>
-            </div>
-            <div className="Artist">
-                <img src="#" alt="artist" class="artist_image"></img>
-                <span class="artist_name"></span>
-                <p>Artista</p>
-            </div>
-            <div className="Artist">
-                <img src="#" alt="artist" class="artist_image"></img>
-                <span class="artist_name"></span>
-                <p>Artista</p>
-            </div>
-            <div className="Artist">
-                <img src="#" alt="artist" class="artist_image"></img>
-                <span class="artist_name"></span>
-                <p>Artista</p>
-            </div>
-            
+const ArtistTable = ({ songs }) => {
+  return (
+    <div className="container-artist-list">
+      {songs.map((val, i) => (
+        <div className="Artist" key={i}>
+          <img
+            src={val?.url}
+            style={{ height: val?.height, width: val?.width }}
+            alt="artist"
+            className="artist_image"
+          />
+          <span className="artist_name">{val?.name}</span>
+          <p>Artista</p>
         </div>
-        );
-}
+      ))}
+    </div>
+  );
+};
 
 export default ArtistTable;
