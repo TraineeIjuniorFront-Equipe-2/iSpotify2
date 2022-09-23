@@ -1,0 +1,11 @@
+.Container{
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: row;
+    background-color:gray;
+}
+
+.Contaienr-login{
+    justify-content: center;
+}

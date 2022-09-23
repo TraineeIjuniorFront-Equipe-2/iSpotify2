@@ -1,16 +1,23 @@
-import "./style.css";
+import React from 'react'
+import "./style.css"
 
-const LoginPage = () => {
-  return (
-    <main>
-      <h1>iSpotify®</h1>
-      <h2>Músicas para todos.</h2>
-      <input type="text" placeholder="Usuário" />
-      <input type="text" placeholder="Usuário" />
-      <button>Entrar</button>
-      <p>NÃO TEM UMA CONTA? <p>INSCREVA-SE</p></p>
-    </main>
-  );
-};
-
-export default LoginPage;
+function LoginPage() {
+    return (
+      <div className='Container'>
+          <header>iSpotify</header>
+          <header>Música para todos.</header>
+          <div className='container-login'></div>
+          <div className='input'>
+            <input type="email"/>
+            <input type="password"/>
+          </div>
+          <div className='button'>Entrar</div>
+          <div className='container-newAccount'>
+            <span className='newAccount1'>Não possui conta?</span>
+            <span className='newAccount2'>Inscreva-se</span>
+          </div>
+      </div>
+    );
+  }
+  
+  export default LoginPage;
