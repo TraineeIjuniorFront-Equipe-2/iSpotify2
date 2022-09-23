@@ -1,0 +1,11 @@
+.content{
+    text-align: center;
+}
+.cadastro{
+    border: white;
+    color: white;
+    background: #3FE168;
+}
+.cadastro:hover {
+  background-color: rgba(34, 220, 17, 0.692);
+}

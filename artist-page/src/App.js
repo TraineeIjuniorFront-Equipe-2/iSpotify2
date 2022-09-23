@@ -1,16 +1,20 @@
-import {Route, BrowserRouter} from 'react-router-dom';
-
+import { Routes, Route } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
+import Register from "./components/Register";
+import Navbar from "./components/Navbar";
+import Dashboard from "./components/Dashboard";
+
 import Artist from "./components/Artist";
 
 import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Route path="/" exact component={Artist} />
-      <Route path="/login" component={LoginPage} />
-    </BrowserRouter> 
+    <Routes>
+      <Route path="/" element={<Artist />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<Register />} />
+    </Routes>
   );
 }
 

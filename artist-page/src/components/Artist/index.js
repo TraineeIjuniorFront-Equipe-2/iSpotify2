@@ -1,5 +1,3 @@
-import {Link} from 'react-router-dom';
-
 import Dashboard from "../Dashboard";
 import Navbar from "../Navbar";
 
