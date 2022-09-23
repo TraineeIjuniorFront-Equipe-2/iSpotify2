@@ -6,6 +6,9 @@ import { apiSpotify, api } from "../../api";
 
 import "./style.css";
 
+import Navbar from "../Navbar";
+import { useNavigate } from "react-router-dom";
+
 const artitsList = [
   "246dkjvS1zLTtiykXe5h60",
   "7dGJo4pcD2V6oG8kP0tJRR",
@@ -48,13 +51,21 @@ const Dashboard = () => {
     })();
   }, []);
 
+  const navigate=useNavigate()
+
   return (
+    <>
+    <Navbar />
     <main className="dashboard">
       <section className="section">
         <h2>Artistas</h2>
         <ArtistTable songs={songs} />
+        <button onClick={()=>navigate("../")}>
+          navegar para login
+        </button>
       </section>
     </main>
+    </>
   );
 };
 

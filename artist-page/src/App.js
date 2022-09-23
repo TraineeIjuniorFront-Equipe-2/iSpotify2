@@ -1,13 +1,20 @@
 import Dashboard from "./components/Dashboard";
-import Navbar from "./components/Navbar";
+import {Routes,Route} from 'react-router-dom'
+import LoginPage from "./components/LoginPage"
+import Navbar from "./components/Navbar"
 
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Dashboard />
+        <Navbar />
+
+        <Routes>
+          <Route path='/' element={<LoginPage/>}/>
+          <Route path='/Dashboard' element={<Dashboard/>}/>
+        </Routes>
+        
     </div>
   );
 }
