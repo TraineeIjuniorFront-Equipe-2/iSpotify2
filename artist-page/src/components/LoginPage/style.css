@@ -40,12 +40,18 @@ button:hover {
   display: flex;
   flex-direction: column;
 }
-input:active{
+
+input:active {
   border: 2px black solid;
 }
 
-
-
 .newAccount2 {
   cursor: pointer;
+}
+
+@media (max-width: 512px) {
+  .input input {
+    width: 364px;
+    height: 46px;
+  }
 }
