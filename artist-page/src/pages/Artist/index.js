@@ -1,5 +1,5 @@
-import Dashboard from "../Dashboard";
-import Navbar from "../Navbar";
+import Dashboard from "../../components/Dashboard";
+import Navbar from "../../components/Navbar";
 
 import "../../App.css";
 

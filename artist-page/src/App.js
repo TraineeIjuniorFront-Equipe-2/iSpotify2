@@ -1,10 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import LoginPage from "./components/LoginPage";
-import Register from "./components/Register";
-import Navbar from "./components/Navbar";
-import Dashboard from "./components/Dashboard";
 
-import Artist from "./components/Artist";
+import LoginPage from "./pages/LoginPage";
+import Register from "./pages/Register";
+import Artist from "./pages/Artist";
 
 import "./App.css";
 
