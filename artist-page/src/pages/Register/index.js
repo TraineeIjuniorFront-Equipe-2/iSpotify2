@@ -61,10 +61,10 @@ function Register() {
             }}
           />
         </div>
-        <button className="cadastro" type="submit">
-          CADASTRAR
-        </button>
       </form>
+      <button className="cadastro" type="submit">
+        CADASTRAR
+      </button>
       <div className="container-newAccount">
         <span className="newAccount1">Já é um usuário do iSpotify? </span>
         <span className="newAccount2">
