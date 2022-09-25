@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 function Register() {
+  const navigate = useNavigate();
   return (
     <div className="Container">
       <h2 className="content">
@@ -13,11 +15,13 @@ function Register() {
         <input type="password" placeholder="Crie uma senha" />
         <input type="chamar" placeholder="Como devemos chamar você?" />
       </div>
-      <button className="cadastro">CADASTRAR</button>
+      <button className="cadastro" onClick={() => navigate("../artist")}>
+        CADASTRAR
+      </button>
       <div className="container-newAccount">
         <span className="newAccount1">Já é um usuário do iSpotify? </span>
         <span className="newAccount2">
-          <u>FAÇA LOGIN</u>
+          <u onClick={() => navigate("../")}>FAÇA LOGIN</u>
         </span>
       </div>
     </div>

@@ -32,28 +32,19 @@ button:hover {
   width: 454px;
   height: 46px;
   background: #3c3c3c;
-  border: none;
+  border: 1px black solid;
   border-radius: 2px;
-
+  color: white;
   margin-bottom: 10px;
 
   display: flex;
   flex-direction: column;
 }
-
-.input input[type="text"],
-select {
-  padding: 14px 20px;
-  background: #3c3c3c;
-
-  /*background-image: url("searchicon.png");
-  background-position: 10px 10px;
-  background-repeat: no-repeat;*/
+input:active{
+  border: 2px black solid;
 }
 
-.input input[type="submit"] {
-  border: none;
-}
+
 
 .newAccount2 {
   cursor: pointer;

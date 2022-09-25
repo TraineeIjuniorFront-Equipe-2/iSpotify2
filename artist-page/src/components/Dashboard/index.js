@@ -59,7 +59,6 @@ const Dashboard = () => {
         <section className="section">
           <h2>Artistas</h2>
           <ArtistTable songs={songs} />
-          <button onClick={() => navigate("../")}>navegar para login</button>
         </section>
       </main>
     </>

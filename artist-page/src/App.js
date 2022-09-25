@@ -11,8 +11,8 @@ import "./App.css";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Artist />} />
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/artist" element={<Artist />} />
+      <Route path="/" element={<LoginPage />} />
       <Route path="/register" element={<Register />} />
     </Routes>
   );
