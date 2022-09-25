@@ -1,68 +1,58 @@
-const router = require('express').Router();
-const UserService = require('../services/UserService');
-const {loginMiddleware,
+/* eslint-disable quotes */
+const router = require("express").Router();
+const UserService = require("../services/UserService");
+const {
+  loginMiddleware,
   jwtMiddleware,
   checkRole,
-  notLoggedIn} = require('../../../middlewares/auth-middlewares.js');
-const userRoles = require('../../../../constants/userRoles.js');
-const statusCodes = require('../../../../constants/statusCodes.js');
+  notLoggedIn,
+} = require("../../../middlewares/auth-middlewares.js");
+const userRoles = require("../../../../constants/userRoles.js");
+const statusCodes = require("../../../../constants/statusCodes.js");
 
-router.post('/login', notLoggedIn(), loginMiddleware);
+router.post("/login", notLoggedIn(), loginMiddleware);
 
-router.post('/logout',
-  jwtMiddleware,
-  async (req, res, next) => {
-    try {
-      // Aqui deveríamos adicionar o cookie em uma blacklist
-      res.clearCookie('jwt');
-      res.status(statusCodes.noContent).end();
-    } catch (error) {
-      next(error);
+router.post("/logout", jwtMiddleware, async (req, res, next) => {
+  try {
+    // Aqui deveríamos adicionar o cookie em uma blacklist
+    res.clearCookie("jwt");
+    res.status(statusCodes.noContent).end();
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post("/", notLoggedIn(), async (req, res, next) => {
+  try {
+    await UserService.create(req.body);
+    res.status(statusCodes.created).end();
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get("/", jwtMiddleware, async (req, res, next) => {
+  try {
+    const users = await UserService.getAll();
+    res.status(statusCodes.success).json(users);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get("/user", jwtMiddleware, async (req, res, next) => {
+  try {
+    if (req.user) {
+      const user = await UserService.getById(req.user.id);
+      res.status(statusCodes.success).json(user);
     }
-  },
-);
+  } catch (error) {
+    next(error);
+  }
+});
 
-router.post('/',
-  jwtMiddleware,
-  async (req, res, next) => {
-    try {
-      await UserService.create(req.body);
-      res.status(statusCodes.created).end();
-    } catch (error) {
-      next(error);
-    }
-  },
-);
-
-router.get('/',
-  jwtMiddleware,
-  async (req, res, next) => {
-    try {
-      const users = await UserService.getAll();
-      res.status(statusCodes.success).json(users);
-    } catch(error){
-      next(error);
-    }
-  },
-);
-
-
-router.get('/user',
-  jwtMiddleware,
-  async (req, res, next) => {
-    try {
-      if (req.user) {
-        const user = await UserService.getById(req.user.id);
-        res.status(statusCodes.success).json(user);
-      }
-    } catch (error) {
-      next(error);
-    }
-  },
-);
-
-
-router.get('/:id',
+router.get(
+  "/:id",
   jwtMiddleware,
   checkRole([userRoles.admin]),
   async (req, res, next) => {
@@ -73,23 +63,20 @@ router.get('/:id',
     } catch (error) {
       next(error);
     }
-  },
+  }
 );
 
+router.put("/:id", jwtMiddleware, async (req, res, next) => {
+  try {
+    await UserService.update(req.params.id, req.body, req.user);
+    res.status(statusCodes.noContent).end();
+  } catch (error) {
+    next(error);
+  }
+});
 
-router.put('/:id',
-  jwtMiddleware,
-  async (req, res, next) => {
-    try {
-      await UserService.update(req.params.id, req.body, req.user);
-      res.status(statusCodes.noContent).end();
-    } catch (error) {
-      next(error);
-    }
-  },
-);
-
-router.delete('/:id',
+router.delete(
+  "/:id",
   jwtMiddleware,
   checkRole([userRoles.admin]),
   async (req, res, next) => {
@@ -99,6 +86,7 @@ router.delete('/:id',
     } catch (err) {
       next(err);
     }
-  });
+  }
+);
 
 module.exports = router;

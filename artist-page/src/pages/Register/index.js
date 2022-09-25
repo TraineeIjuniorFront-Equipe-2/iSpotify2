@@ -38,7 +38,6 @@ function Register() {
       <form onSubmit={handleSubmit}>
         <div className="input">
           <input
-            type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => {
