@@ -20,10 +20,12 @@ const Navbar = () => {
         <p className="artist">Artistas</p>
         <p className="music">Músicas Curtidas</p>
       </main>
+      
       <footer className="logout">
         <p onClick={() => navigate("../")}>Logout</p>
         <img src={Logout} alt="" />
       </footer>
+      
     </nav>
   );
 };

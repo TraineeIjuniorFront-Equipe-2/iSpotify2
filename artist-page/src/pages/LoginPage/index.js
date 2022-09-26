@@ -14,7 +14,9 @@ function LoginPage() {
         <input type="email" placeholder="Insira seu email" />
         <input type="password" placeholder="Insira sua senha" />
       </div>
+      
       <button onClick={() => navigate("../artist")}>Entrar</button>
+      
       <div className="container-newAccount">
         <span className="newAccount1">Não possui conta? </span>
         <span className="newAccount2">

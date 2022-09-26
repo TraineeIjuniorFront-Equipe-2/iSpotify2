@@ -14,20 +14,12 @@ function App() {
     <Routes>
       <Route
         path="/"
-        element={
-          <ProtectedRoute user={true}>
-            <LoginPage />
-          </ProtectedRoute>
-        }
+        element={<ProtectedRoute user={false}></ProtectedRoute>}
       />
       <Route path="/register" element={<Register />} />
       <Route
         path="/artist"
-        element={
-          <ProtectedRoute user={true}>
-            <Artist />
-          </ProtectedRoute>
-        }
+        element={<ProtectedRoute user={false}></ProtectedRoute>}
       />
     </Routes>
   );
@@ -35,9 +27,9 @@ function App() {
 
 export default App;
 
-const ProtectedRoute = ({ user, notUser }) => {
+const ProtectedRoute = ({ user }) => {
   if (!user) {
-    return <Navigate to="/" replace />;
+    return <LoginPage />;
   }
-  return notUser;
+  return <Artist />;
 };
