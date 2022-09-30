@@ -1,0 +1,22 @@
+.Album {
+  display: grid;
+  height: 100vh;
+  grid-template-areas: "nav main";
+  grid-template-columns: 180px 1fr;
+}
+
+.Album .dashboard {
+  grid-area: main;
+}
+
+.Album .navbar {
+  grid-area: nav;
+}
+
+@media (max-width: 768px) {
+  .Album {
+    grid-template-areas: "nav" "main";
+    grid-template-rows: 90px 1fr;
+    grid-template-columns: 1fr;
+  }
+}

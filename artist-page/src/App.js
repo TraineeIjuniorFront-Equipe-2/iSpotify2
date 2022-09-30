@@ -4,8 +4,8 @@ import LoginPage from "./pages/LoginPage";
 import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
-
 import Artist from "./pages/Artist";
+import Album from "./pages/Album";
 
 import "./App.css";
 
@@ -14,12 +14,14 @@ function App() {
     <Routes>
       <Route
         path="/"
-        element={<ProtectedRoute user={false}></ProtectedRoute>}
+        element={<ProtectedRoute user={true}></ProtectedRoute>}
       />
+      <Route path="/logout" element={<LoginPage />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/album" element={<Album />} />
       <Route
         path="/artist"
-        element={<ProtectedRoute user={false}></ProtectedRoute>}
+        element={<ProtectedRoute user={true}></ProtectedRoute>}
       />
     </Routes>
   );
