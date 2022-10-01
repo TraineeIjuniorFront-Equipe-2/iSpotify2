@@ -17,12 +17,19 @@ const Navbar = () => {
       </header>
 
       <main className="containner">
-        <p className="artist">Artistas</p>
-        <p className="music">Músicas Curtidas</p>
+        <p className="artist" onClick={() => navigate("../")}>
+          Artistas
+        </p>
+        <p className="music" onClick={() => navigate("../favSongs")}>
+          Músicas Curtidas
+        </p>
+        <p className="myAccount" onClick={() => navigate("../myAccount")}>
+          Minha Conta
+        </p>
       </main>
 
       <footer className="logout">
-        <p onClick={() => navigate("../album")}>Logout</p>
+        <p onClick={() => navigate("../logout")}>Logout</p>
         <img src={Logout} alt="" />
       </footer>
     </nav>
