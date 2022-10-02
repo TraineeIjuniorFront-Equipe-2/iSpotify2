@@ -3,13 +3,13 @@ import "./style.css";
 
 const AlbumDescription = () => {
   return (
-    <div className="containner">
-      <img src={capa} className="capa" alt="capa" />
-      <div className="Description">
+    <div className="containnerS">
+      <img src={capa} className="capaS" alt="capa" />
+      <div className="DescriptionS">
         <h1>Daily Mix 1</h1>
         <p>Leva Noiz, Banda Djavú, Dimas e seus teclados e mais...</p>
         <span>
-          Spotify - 5000 músicas<p id="hidden">1h 7min</p>
+          Spotify - 5000 músicas<p id="hiddenS">1h 7min</p>
         </span>
       </div>
     </div>

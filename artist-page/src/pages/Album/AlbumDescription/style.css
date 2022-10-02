@@ -1,15 +1,15 @@
-.containner {
+.containnerS {
   display: flex;
   align-items: center;
 }
-.capa {
+.capaS {
   width: 224px;
   height: 224px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 
   cursor: pointer;
 }
-.Description {
+.DescriptionS {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -20,22 +20,22 @@
   text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
 }
 
-.Description h1 {
+.DescriptionS h1 {
   font-size: 3rem;
 }
 
-.Description span {
+.DescriptionS span {
   display: flex;
   flex-direction: row;
 }
 
-.Description #hidden {
+.DescriptionS #hiddenS {
   margin-left: 10px;
   color: rgba(255, 255, 255, 0.4);
 }
 
 @media (max-width: 526px) {
-  .capa {
+  .capaS {
     width: 184px;
     height: 184px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
@@ -44,22 +44,22 @@
     align-self: flex-start;
   }
 
-  .containner {
+  .containnerS {
     flex-direction: column;
   }
 
-  .Description {
+  .DescriptionS {
     margin-left: 0;
   }
 
-  .Description span {
+  .DescriptionS span {
     display: block;
   }
-  .Description #hidden {
+  .DescriptionS #hiddenS {
     margin-left: 0px;
     color: rgba(255, 255, 255, 0.4);
   }
-  .Description h1 {
+  .DescriptionS h1 {
     font-size: 2.5rem;
   }
 }

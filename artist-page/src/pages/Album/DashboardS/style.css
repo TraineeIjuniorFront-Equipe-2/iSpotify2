@@ -1,19 +1,19 @@
-.dashboard {
+.dashboardS {
   overflow-y: auto;
   background: var(--background-gradient-blue);
   padding: 96px 24px 24px;
 }
 
-.album-icons {
+.album-iconsS {
   margin: 72px 0;
 }
 
 @media (max-width: 768px) {
-  .dashboard {
+  .dashboardS {
     padding: 24px;
   }
 
-  .album-icons {
+  .album-iconsS {
     margin: 24px 0;
   }
 }

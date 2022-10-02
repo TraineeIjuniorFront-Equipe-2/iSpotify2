@@ -23,8 +23,15 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <header>
-        <img src={ispotify} className="ispotify" alt="ispotify" />
-        <h1 className="logoName">iSpotify®</h1>
+        <img
+          onClick={() => navigate("../artist")}
+          src={ispotify}
+          className="ispotify"
+          alt="ispotify"
+        />
+        <h1 className="logoName" onClick={() => navigate("../artist")}>
+          iSpotify®
+        </h1>
       </header>
 
       <main className="containner">

@@ -8,10 +8,10 @@ import { musicData } from "./data";
 
 const DashboardS = () => {
   return (
-    <main className="dashboard">
+    <main className="dashboardS">
       <section>
         <AlbumDescription />
-        <div className="album-icons">
+        <div className="album-iconsS">
           <AlbumIcons />
         </div>
         <MusicTable musicData={musicData} />
