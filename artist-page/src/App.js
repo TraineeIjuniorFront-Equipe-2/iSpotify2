@@ -1,26 +1,18 @@
-import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+
 import LoginPage from "./pages/LoginPage";
 import Register from "./pages/Register";
-import Navbar from "./components/Navbar";
-import Dashboard from "./components/Dashboard";
 import Artist from "./pages/Artist";
 import Album from "./pages/Album";
 import FavSongs from "./pages/FavSongs";
-import myAccount from "./pages/myAccount";
+import MyAccount from "./pages/MyAccount";
+
 import "./App.css";
 
 function App() {
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <ProtectedRoute user={true}>
-            <LoginPage />
-          </ProtectedRoute>
-        }
-      />
+      <Route path="/" element={<LoginPage />} />
       <Route
         path="/favSongs"
         element={
@@ -33,7 +25,7 @@ function App() {
         path="/myAccount"
         element={
           <ProtectedRoute user={true}>
-            <myAccount />
+            <MyAccount />
           </ProtectedRoute>
         }
       />
@@ -74,13 +66,6 @@ function App() {
 }
 
 export default App;
-
-// const ProtectedRoute = ({ user }) => {
-//   if (!user) {
-//     return <LoginPage />;
-//   }
-//   return <Artist />;
-// };
 
 const ProtectedRoute = ({ user, children }) => {
   if (!user) {
