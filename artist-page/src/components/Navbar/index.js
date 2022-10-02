@@ -17,7 +17,7 @@ const Navbar = () => {
       </header>
 
       <main className="containner">
-        <p className="artist" onClick={() => navigate("../")}>
+        <p className="artist" onClick={() => navigate("../artist")}>
           Artistas
         </p>
         <p className="music" onClick={() => navigate("../favSongs")}>

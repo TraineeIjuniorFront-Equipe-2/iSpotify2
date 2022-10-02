@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Alert from "@mui/material/Alert";
 
 import { api } from "../../api";
 
@@ -11,9 +12,14 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    if (!email || !password || !name) {
+      setError("Por favor, preencha todos os campos");
+      return;
+    }
+
     const data = {
       name,
       email,
@@ -23,9 +29,11 @@ function Register() {
 
     try {
       const response = await api.post("/users", data);
-      console.log(response);
+      navigate("/artist");
+      /*console.log(response);*/
     } catch (error) {
-      console.log(error);
+      setError(error?.response?.data);
+      /*console.log(error);*/
     }
   };
 
@@ -62,9 +70,11 @@ function Register() {
           />
         </div>
       </form>
-      <button className="cadastro" type="submit">
+      <button className="cadastro" type="submit" onClick={() => handleSubmit()}>
         CADASTRAR
       </button>
+      {error && <Alert severity="error">{error}</Alert>}
+
       <div className="container-newAccount">
         <span className="newAccount1">Já é um usuário do iSpotify? </span>
         <span className="newAccount2">

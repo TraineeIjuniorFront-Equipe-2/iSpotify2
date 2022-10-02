@@ -14,6 +14,10 @@ function LoginPage() {
   const [error, setError] = useState("");
 
   const handleSubmit = async () => {
+    if (!email || !password) {
+      setError("Por favor, preencha todos os campos");
+      return;
+    }
     const data = {
       email,
       password,
