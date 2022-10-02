@@ -13,15 +13,61 @@ import "./App.css";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<ProtectedRoute user={true}></ProtectedRoute>} />
-      <Route path="/favSongs" element={<FavSongs />} />
-      <Route path="/myAccount" element={<myAccount />} />
-      <Route path="/album" element={<Album />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/album" element={<Album />} />
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute user={true}>
+            <LoginPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/favSongs"
+        element={
+          <ProtectedRoute user={true}>
+            <FavSongs />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/myAccount"
+        element={
+          <ProtectedRoute user={true}>
+            <myAccount />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/album"
+        element={
+          <ProtectedRoute user={true}>
+            <Album />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/register"
+        element={
+          <ProtectedRoute user={true}>
+            <Register />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/album"
+        element={
+          <ProtectedRoute user={true}>
+            <Album />
+          </ProtectedRoute>
+        }
+      />
       <Route
         path="/artist"
-        element={<ProtectedRoute user={true}></ProtectedRoute>}
+        element={
+          <ProtectedRoute user={true}>
+            <Artist />
+          </ProtectedRoute>
+        }
       />
     </Routes>
   );
@@ -29,9 +75,17 @@ function App() {
 
 export default App;
 
-const ProtectedRoute = ({ user }) => {
+// const ProtectedRoute = ({ user }) => {
+//   if (!user) {
+//     return <LoginPage />;
+//   }
+//   return <Artist />;
+// };
+
+const ProtectedRoute = ({ user, children }) => {
   if (!user) {
-    return <LoginPage />;
+    return <Navigate to="/" />;
   }
-  return <Artist />;
+
+  return children;
 };
