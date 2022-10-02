@@ -3,12 +3,12 @@ import favSong from "../../../assets/icons/favSong.svg";
 
 function Dashboard() {
   return (
-    <div className="Container">
-      <div className="Top">
-        <div className="Image">
-          <img src={favSong} alt="" className="favSong" />
+    <div className="ContainerF">
+      <div className="TopF">
+        <div className="ImageF">
+          <img src={favSong} alt="" className="favSongF" />
         </div>
-        <div className="Description">
+        <div className="DescriptionF">
           <p>PLAYLIST</p>
           <h1>Músicas Curtidas</h1>
         </div>
