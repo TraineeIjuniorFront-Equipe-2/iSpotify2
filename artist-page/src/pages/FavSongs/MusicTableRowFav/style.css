@@ -1,0 +1,43 @@
+.music-table-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 16px;
+}
+
+.music-table-row .music-table-row-content {
+  display: grid;
+  grid-template-columns: var(--table-grid);
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.music-table-row-content:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.music-table-row-content button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.music-table-row-btns img:hover,
+.music-table-row-btns svg:hover {
+  opacity: 0.7;
+}
+
+.music-table-row-btns img {
+  width: 22px;
+  height: 22px;
+}
+
+.music-table-row-content .music-table-row-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}

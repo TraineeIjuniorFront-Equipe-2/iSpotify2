@@ -1,0 +1,42 @@
+.Containner {
+  display: flex;
+  align-items: center;
+}
+
+.play {
+  width: 55px;
+  height: 55px;
+  margin-right: 1.5%;
+  cursor: pointer;
+}
+
+.heart button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.install {
+  width: 36px;
+  height: 36px;
+  margin-right: 2.5%;
+  cursor: pointer;
+}
+
+.play:hover,
+.install:hover {
+  filter: opacity(50%);
+}
+
+@media (max-width: 768px) {
+  .play {
+    width: 40px;
+    height: 40px;
+  }
+
+  .install {
+    width: 26px;
+    height: 26px;
+  }
+
+}

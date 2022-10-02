@@ -34,8 +34,21 @@ function MyAccount() {
         <Navbar />
         <main className="dashboard" style={{ background: "#111" }}>
           <div className="my-account">
-            <input placeholder="Nome" disabled value={userData?.name} />
-            <input placeholder="Email" disabled value={userData?.email} />
+            <h1>Minha Conta</h1>
+            <input
+              style={{ cursor: "pointer" }}
+              Title="Insira seu Nome"
+              placeholder="Nome"
+              disabled
+              value={userData?.name}
+            />
+            <input
+              style={{ cursor: "pointer" }}
+              Title="Insira sua Senha"
+              placeholder="Email"
+              disabled
+              value={userData?.email}
+            />
             <div className="my-account-buttons">
               <button onClick={() => setOpenEmailModal(true)}>
                 Trocar email
