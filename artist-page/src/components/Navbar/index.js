@@ -2,13 +2,24 @@ import ispotify from "../../assets/icons/ispotify.png";
 import Heart from "../../assets/icons/favorite.png";
 import Logout from "../../assets/icons/logout.png";
 import Disk from "../../assets/icons/album.png";
-
+import Alert from "@mui/material/Alert";
 import { useNavigate } from "react-router-dom";
-
+import React, { useState } from "react";
 import "./style.css";
+import { api } from "../../api";
 
 const Navbar = () => {
   const navigate = useNavigate();
+
+  const handleSubmit = async () => {
+    try {
+      await api.post("/users/logout");
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <nav className="navbar">
       <header>
@@ -29,7 +40,8 @@ const Navbar = () => {
       </main>
 
       <footer className="logout">
-        <p onClick={() => navigate("../logout")}>Logout</p>
+        <p onClick={() => handleSubmit()}>Logout</p>
+
         <img src={Logout} alt="" />
       </footer>
     </nav>
