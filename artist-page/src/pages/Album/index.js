@@ -1,11 +1,11 @@
 import "./Album.css";
 import DashboardS from "./DashboardS";
-import NavbarS from "./NavbarS";
+import Navbar from "../../components/Navbar";
 
 function Album() {
   return (
     <div className="Album">
-      <NavbarS />
+      <Navbar />
       <DashboardS />
     </div>
   );
