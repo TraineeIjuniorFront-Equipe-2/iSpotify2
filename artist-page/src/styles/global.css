@@ -21,12 +21,14 @@ body,
   overflow: hidden;
   font-family: "Inter", sans-serif;
   color: #fff;
+  
   background: var(--background-color);
   --background-gradient-blue: linear-gradient(
     180deg,
     #17a6e4 0%,
     #000000 80.84%
   );
+  
   --green-primary: #3fe168;
   --table-grid: 4fr 2fr 1fr;
   --table-header: #d9d9d9;

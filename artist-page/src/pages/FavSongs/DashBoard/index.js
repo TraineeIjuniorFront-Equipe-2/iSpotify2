@@ -7,18 +7,24 @@ import { musicData } from "../../Album/DashboardS/data";
 
 function Dashboard() {
   return (
-    <div className="ContainerF">
-      <div className="TopF">
-        <div className="ImageF">
-          <img src={favSong} alt="" className="favSongF" />
-        </div>
-        <div className="DescriptionF">
-          <p>PLAYLIST</p>
-          <h1>Músicas Curtidas</h1>
+    <div className="dashboardF">
+      <div className="ContainerF">
+        <div className="TopF">
+          <div className="ImageF">
+            <img src={favSong} alt="" className="favSongF" />
+          </div>
+          <div className="DescriptionF">
+            <p>PLAYLIST</p>
+            <h1>Músicas Curtidas</h1>
+          </div>
         </div>
       </div>
-      <AlbumIconsFav />
-      <MusicTableFav musicData={musicData} />
+      <div className="rowF">
+        <div className="iconsFav">
+          <AlbumIconsFav />
+        </div>
+        <MusicTableFav musicData={musicData} />
+      </div>
     </div>
   );
 }
