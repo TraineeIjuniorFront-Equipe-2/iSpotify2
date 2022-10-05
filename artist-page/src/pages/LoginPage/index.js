@@ -11,6 +11,7 @@ function LoginPage() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   const handleSubmit = async () => {
@@ -18,6 +19,9 @@ function LoginPage() {
       setError("Por favor, preencha todos os campos");
       return;
     }
+    setLoading(true);
+    setError("");
+
     const data = {
       email,
       password,
@@ -28,41 +32,59 @@ function LoginPage() {
       navigate("/artist");
     } catch (err) {
       setError(err?.response?.data);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="Container">
-      <h1>iSpotify®</h1>
-      <h2>Música para todos.</h2>
-      <div className="container-login"></div>
-      <div className="input">
-        <input
-          type="email"
-          placeholder="Insira seu email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-        <input
-          type="password"
-          placeholder="Insira sua senha"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
-      </div>
-      <button onClick={() => handleSubmit()}>Entrar</button>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: 12,
+        }}
+      >
+        <h1>iSpotify®</h1>
+        <h2>Música para todos.</h2>
+        <div className="container-login"></div>
+        <div className="input">
+          <input
+            type="email"
+            placeholder="Insira seu email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <input
+            type="password"
+            placeholder="Insira sua senha"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+        </div>
+        <button onClick={() => handleSubmit()} disabled={loading}>
+          Entrar
+        </button>
 
-      {error && <Alert severity="error">{error}</Alert>}
+        {error && (
+          <div style={{ padding: "8px 0" }}>
+            <Alert severity="error">{error}</Alert>
+          </div>
+        )}
 
-      <div className="container-newAccount">
-        <span className="newAccount1">Não possui conta? </span>
-        <span className="newAccount2">
-          <u onClick={() => navigate("../register")}>Inscreva-se</u>
-        </span>
+        <div className="container-newAccount">
+          <span className="newAccount1">Não possui conta? </span>
+          <span className="newAccount2">
+            <u onClick={() => navigate("../register")}>Inscreva-se</u>
+          </span>
+        </div>
       </div>
     </div>
   );
