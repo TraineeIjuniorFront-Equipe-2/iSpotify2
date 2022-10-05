@@ -37,17 +37,15 @@ function MyAccount() {
             <h1>Minha Conta</h1>
             <input
               style={{ cursor: "pointer" }}
-              Title="Insira seu Nome"
               placeholder="Nome"
               disabled
-              value={userData?.name}
+              value={userData?.name ?? ""}
             />
             <input
               style={{ cursor: "pointer" }}
-              Title="Insira sua Senha"
               placeholder="Email"
               disabled
-              value={userData?.email}
+              value={userData?.email ?? ""}
             />
             <div className="my-account-buttons">
               <button onClick={() => setOpenEmailModal(true)}>
@@ -70,6 +68,9 @@ function MyAccount() {
         isOpen={openEmailModal}
         setIsOpen={setOpenEmailModal}
         user={userData}
+        update={() => {
+          getUserData();
+        }}
       />
     </>
   );

@@ -6,7 +6,7 @@ import { api } from "../../../api";
 
 import "./styles.css";
 
-const EmailModal = ({ isOpen, setIsOpen, user }) => {
+const EmailModal = ({ isOpen, setIsOpen, user, update }) => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -23,6 +23,7 @@ const EmailModal = ({ isOpen, setIsOpen, user }) => {
       await api.put(`users/${user?.id}`, {
         email: email,
       });
+      update();
       setIsOpen(false);
       setEmail("");
     } catch (error) {
