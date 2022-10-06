@@ -35,7 +35,7 @@ function Register() {
       await api.post("/users", data);
       await api.post("/users/login", { email, password });
 
-      navigate("/homw");
+      navigate("/home");
     } catch (error) {
       setError(error?.response?.data);
     } finally {
