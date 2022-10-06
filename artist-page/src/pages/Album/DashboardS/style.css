@@ -4,6 +4,21 @@
   padding: 96px 24px 24px;
 }
 
+.artist-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.artist-card h1 {
+  font-size: 2rem;
+}
+
+.artist-card img {
+  width: 224px;
+  height: 224px;
+}
+
 .album-iconsS {
   margin: 72px 0;
 }

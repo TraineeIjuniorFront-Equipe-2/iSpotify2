@@ -2,26 +2,20 @@ import { useState } from "react";
 
 import HeartFilled from "../../../assets/icons/heartFilled";
 import trash from "../../../assets/icons/trash.svg";
-import playArrow from "../../../assets/icons/playArrow.svg";
 
 import "./style.css";
 
-const MusicTableRow = ({ index, name, artist, album, onDelete }) => {
+const MusicTableRow = ({ index, name, singer, album, onDelete, img }) => {
   const [isLiked, setIsLiked] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div className="music-table-row">
-      <div
-        className="music-table-row-content"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
+      <div className="music-table-row-content">
         <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-          <span>{isHovered ? <img src={playArrow} alt="play" /> : index}</span>
-          <div>
+          <img src={img} alt="play" width={"40px"} />
+          <div style={{ textAlign: "start" }}>
             <p>{name}</p>
-            <p>{artist}</p>
+            <p>{singer}</p>
           </div>
         </div>
         <div>

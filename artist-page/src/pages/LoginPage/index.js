@@ -29,7 +29,7 @@ function LoginPage() {
 
     try {
       await api.post("/users/login", data);
-      navigate("/artist");
+      navigate("/home");
     } catch (err) {
       setError(err?.response?.data);
     } finally {

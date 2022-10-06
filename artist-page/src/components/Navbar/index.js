@@ -1,12 +1,12 @@
-import ispotify from "../../assets/icons/ispotify.png";
-import Heart from "../../assets/icons/favorite.png";
-import Logout from "../../assets/icons/logout.png";
-import Disk from "../../assets/icons/album.png";
-import Alert from "@mui/material/Alert";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
-import "./style.css";
+
+import ispotify from "../../assets/icons/ispotify.png";
+import Logout from "../../assets/icons/logout.png";
+
 import { api } from "../../api";
+
+import "./style.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const Navbar = () => {
       await api.post("/users/logout");
       navigate("/");
     } catch (err) {
-      console.log(err);
+      navigate("/");
     }
   };
 
@@ -24,31 +24,26 @@ const Navbar = () => {
     <nav className="navbar">
       <header>
         <img
-          onClick={() => navigate("../artist")}
+          onClick={() => navigate("../home")}
           src={ispotify}
           className="ispotify"
           alt="ispotify"
         />
-        <h1 className="logoName" onClick={() => navigate("../artist")}>
+        <h1 className="logoName" onClick={() => navigate("../home")}>
           iSpotify®
         </h1>
       </header>
 
-      <main className="containner">
-        <p className="artist" onClick={() => navigate("../artist")}>
-          Artistas
-        </p>
-        <p className="music" onClick={() => navigate("../favSongs")}>
-          Músicas Curtidas
-        </p>
-        <p className="myAccount" onClick={() => navigate("../myAccount")}>
-          Minha Conta
-        </p>
-      </main>
+      <div className="nav-btns">
+        <a href="/home">Artistas</a>
+        <a href="/favSongs">Músicas Curtidas</a>
+        <a href="/myAccount">Minha Conta</a>
+      </div>
 
       <footer className="logout">
-        <p onClick={() => handleSubmit()}>Logout</p>
-
+        <p style={{ cursor: "pointer" }} onClick={() => handleSubmit()}>
+          Logout
+        </p>
         <img src={Logout} alt="" />
       </footer>
     </nav>

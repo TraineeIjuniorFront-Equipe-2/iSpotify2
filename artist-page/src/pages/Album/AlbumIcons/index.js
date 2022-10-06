@@ -6,7 +6,7 @@ import play from "../../../assets/icons/play.svg";
 import install from "../../../assets/icons/install.svg";
 import moreOptions from "../../../assets/icons/moreOptions.svg";
 
-const AlbumDescription = () => {
+const AlbumIcons = () => {
   const [isLiked, setIsLiked] = useState(false);
 
   return (
@@ -28,4 +28,4 @@ const AlbumDescription = () => {
   );
 };
 
-export default AlbumDescription;
+export default AlbumIcons;

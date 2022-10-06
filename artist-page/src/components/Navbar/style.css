@@ -1,72 +1,56 @@
 .navbar {
-    padding: 12px;
-    text-align: center;
-  }
-  
-  .navbar header {
-    display: flex;
-    align-items: flex-start;
-    cursor: pointer;
-  }
-  
-  .ispotify {
-    width: 70px;
-    height: 70px;
-  }
-  
-  .logoName {
-    font-size: 1.125rem;
-    align-self: center;
-    }
+  padding: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-    .containner{
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      
-    }
-    .containner p{
-      text-align: center;
-      padding-top: 1rem;
-    }
+.navbar header {
+  display: flex;
+  align-items: flex-start;
+}
 
-    footer{
-      height: 76%;
-      display: flex;
-      flex-direction: column-reverse;
+.ispotify {
+  width: 70px;
+  height: 70px;
+}
 
-      cursor: pointer;
-    }
+.nav-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
-    footer p{
-      text-align: center;
-    }
+.logoName {
+  font-size: 1.125rem;
+  align-self: center;
+}
 
-    div .containner p:hover, footer p:hover{
-      color: rgba(255, 255, 255, 0.545);
-    }
+.navbar footer {
+  height: 76%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.navbar footer p {
+  text-align: center;
+}
 
 @media (max-width: 768px) {
   .navbar {
-    display: flex;
-    align-items: flex-start;
+    align-items: center;
   }
-  .music{
-    margin-left: 12px;
-    
+
+  .navbar header,
+  .navbar img {
+    display: none;
   }
-  footer{
-    margin-left: 12px;
-  }
-  .containner{
+
+  .nav-btns {
     display: flex;
     flex-direction: row;
-   
+
     margin-top: 15px;
-    
   }
-  .artist {
-    margin-left: 12px;
-  }
-  
 }

@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar";
 
 import "../../App.css";
 
-function Artist() {
+function HomePage() {
   return (
     <div className="App">
       <Navbar />
@@ -12,4 +12,4 @@ function Artist() {
   );
 }
 
-export default Artist;
+export default HomePage;

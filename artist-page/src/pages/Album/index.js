@@ -1,14 +1,18 @@
+import { useParams } from "react-router-dom";
 import "./Album.css";
-import DashboardS from "./DashboardS";
+
+import Artist from "./DashboardS";
 import Navbar from "../../components/Navbar";
 
-function Album() {
+function ArtistPage() {
+  const params = useParams();
+
   return (
     <div className="Album">
       <Navbar />
-      <DashboardS />
+      <Artist id={params?.id} />
     </div>
   );
 }
 
-export default Album;
+export default ArtistPage;
