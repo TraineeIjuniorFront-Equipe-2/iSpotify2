@@ -25,6 +25,7 @@ const MusicTableRow = ({ index, name, singer, album, onDelete, img }) => {
           <button
             onClick={() => {
               setIsLiked(!isLiked);
+              //salvaria um json(vetor) contendo os dados das musicas curtidas
             }}
           >
             <HeartFilled isFilled={isLiked} />

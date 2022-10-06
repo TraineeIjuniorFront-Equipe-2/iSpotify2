@@ -6,6 +6,7 @@ import AlbumIconsFav from "../AlbumIconsFav";
 import { musicData } from "../../Album/DashboardS/data";
 
 function Dashboard() {
+  //carregar dados salvos no localstorage
   return (
     <div className="dashboardF">
       <div className="ContainerF">
