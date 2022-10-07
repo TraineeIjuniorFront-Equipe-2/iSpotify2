@@ -7,6 +7,13 @@ import "./style.css";
 
 const MusicTableRow = ({ index, name, singer, album, onDelete, img }) => {
   const [isLiked, setIsLiked] = useState(false);
+  
+  const saveLiked = {
+    name: name,
+    singer: singer,
+    album: album,
+    img: img
+  };
 
   return (
     <div className="music-table-row">
@@ -25,11 +32,14 @@ const MusicTableRow = ({ index, name, singer, album, onDelete, img }) => {
           <button
             onClick={() => {
               setIsLiked(!isLiked);
+              localStorage.setItem("liked", JSON.stringify(saveLiked));
               //salvaria um json(vetor) contendo os dados das musicas curtidas
             }}
           >
             <HeartFilled isFilled={isLiked} />
+            
           </button>
+          
           <button onClick={onDelete}>
             <img src={trash} alt="" />
           </button>

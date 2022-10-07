@@ -34,6 +34,7 @@ const MusicTableRowFav = ({ index, name, artist, album, onDelete }) => {
             }}
           >
             <HeartFilled isFilled={isLiked} />
+            
           </button>
           <button onClick={onDelete}>
             <img src={trash} alt="" />

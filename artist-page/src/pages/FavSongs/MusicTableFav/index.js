@@ -1,6 +1,6 @@
 import { useState } from "react";
 import clock from "../../../assets/icons/clock.svg";
-import MusicTableRow from "../MusicTableRowFav";
+import MusicTableRowFav from "../MusicTableRowFav";
 
 import "./style.css";
 
@@ -32,7 +32,7 @@ const MusicTableFav = ({ musicData, ...props }) => {
       <hr />
       <div className="content">
         {musicList.map((music, i) => (
-          <MusicTableRow
+          <MusicTableRowFav
             key={music.id}
             index={i + 1}
             onDelete={() => {
