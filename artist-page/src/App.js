@@ -5,7 +5,7 @@ import Register from "./pages/Register";
 import Home from "./pages/Home";
 import ArtistPage from "./pages/Album";
 import FavSongs from "./pages/FavSongs";
-import MyAccount from "./pages/MyAccount";
+import MyAccount from "./pages/myAccount";
 
 import "./App.css";
 
