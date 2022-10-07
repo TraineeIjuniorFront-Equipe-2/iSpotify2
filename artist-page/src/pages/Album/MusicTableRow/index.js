@@ -7,13 +7,27 @@ import "./style.css";
 
 const MusicTableRow = ({ index, name, singer, album, onDelete, img }) => {
   const [isLiked, setIsLiked] = useState(false);
-  
+
+  const objLiked = JSON.parse(localStorage.getItem("liked"));
   const saveLiked = {
     name: name,
     singer: singer,
     album: album,
     img: img
   };
+
+    if (isLiked) {
+      localStorage.setItem("liked", JSON.stringify(saveLiked));
+      var items=[];
+      items.push(objLiked.name);
+      items.push(objLiked.singer);
+      items.push(objLiked.album);
+      items.push(objLiked.img);
+      console.log(items);
+    }else{
+      localStorage.removeItem("liked");
+      console.log(items);
+    }
 
   return (
     <div className="music-table-row">
@@ -32,7 +46,6 @@ const MusicTableRow = ({ index, name, singer, album, onDelete, img }) => {
           <button
             onClick={() => {
               setIsLiked(!isLiked);
-              localStorage.setItem("liked", JSON.stringify(saveLiked));
               //salvaria um json(vetor) contendo os dados das musicas curtidas
             }}
           >
