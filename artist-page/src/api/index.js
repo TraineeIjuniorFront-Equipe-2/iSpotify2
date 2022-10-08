@@ -5,11 +5,13 @@ const api = axios.create({
   withCredentials: true,
 });
 
+const token =
+  "BQAKaRJtdQkM9DqUl2YZ0aB9PmM3k8zc_ozZL4XwBllntMmFCu5YPR6ou3FIC2wXpmv5r43u9Gn1ennP2v0RT662zAeUAGnXySofQaJQpkRj3KU3CLcnUo-7gfB66ENpyiBV6JEEQozm4tycU7PLeMaD3s1RRniIxOJY9ZFC1-gcHpdyhAdPWA";
+
 const apiSpotify = axios.create({
   baseURL: "https://api.spotify.com/v1/",
   headers: {
-    Authorization:
-      "Bearer BQDVgKu3e8Bz5qZMdQQ5swzCiwd1Ert3EOo9dDeg8VyCZpOr37EiTF0m_PGo9OSCF1NtZCXtIcvccy258xXEnx6kM_ryivS0E1WTuYpyei4205r268NeKnVaJdIy6BlFSc0csOyyWwOMh_JpPOfvL0eh2UX_bXz55yNPuqdujHZSx3emFo7NYCqFvhPS0jt9MOPD",
+    Authorization: `Bearer ${token}`,
   },
 });
 

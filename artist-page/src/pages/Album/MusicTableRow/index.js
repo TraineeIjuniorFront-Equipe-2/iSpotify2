@@ -1,33 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import HeartFilled from "../../../assets/icons/heartFilled";
 import trash from "../../../assets/icons/trash.svg";
 
 import "./style.css";
 
-const MusicTableRow = ({ index, name, singer, album, onDelete, img }) => {
+const MusicTableRow = ({ index, name, singer, album, img, id }) => {
   const [isLiked, setIsLiked] = useState(false);
+  const [likedSongsList, setLikedSongsList] = useState([]);
 
-  const objLiked = JSON.parse(localStorage.getItem("liked"));
-  const saveLiked = {
-    name: name,
-    singer: singer,
-    album: album,
-    img: img
-  };
+  useEffect(() => {
+    const likedSongs = JSON.parse(localStorage.getItem("songs"));
 
-    if (isLiked) {
-      localStorage.setItem("liked", JSON.stringify(saveLiked));
-      var items=[];
-      items.push(objLiked.name);
-      items.push(objLiked.singer);
-      items.push(objLiked.album);
-      items.push(objLiked.img);
-      console.log(items);
-    }else{
-      localStorage.removeItem("liked");
-      console.log(items);
+    if (likedSongs) {
+      setLikedSongsList(likedSongs);
+      likedSongs?.forEach((e) => {
+        e?.id === id && setIsLiked(true);
+      });
     }
+  }, []);
+
+  const handleLikeSong = () => {
+    const songData = {
+      name,
+      singer,
+      album,
+      img,
+      id,
+    };
+
+    if (!isLiked) {
+      const newList = [songData, ...likedSongsList];
+      setLikedSongsList(newList);
+
+      localStorage.setItem("songs", JSON.stringify(newList));
+    } else {
+      const newList = likedSongsList?.filter((e) => e?.id !== id);
+      setLikedSongsList(newList);
+      localStorage.setItem("songs", JSON.stringify(newList));
+    }
+
+    setIsLiked(!isLiked);
+  };
 
   return (
     <div className="music-table-row">
@@ -45,17 +59,16 @@ const MusicTableRow = ({ index, name, singer, album, onDelete, img }) => {
         <div className="music-table-row-btns">
           <button
             onClick={() => {
-              setIsLiked(!isLiked);
+              handleLikeSong();
               //salvaria um json(vetor) contendo os dados das musicas curtidas
             }}
           >
             <HeartFilled isFilled={isLiked} />
-            
           </button>
-          
-          <button onClick={onDelete}>
+
+          {/* <button onClick={onDelete}>
             <img src={trash} alt="" />
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
