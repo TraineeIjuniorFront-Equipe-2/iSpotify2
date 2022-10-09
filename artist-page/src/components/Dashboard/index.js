@@ -12,7 +12,11 @@ const Dashboard = () => {
   const getSongs = async () => {
     try {
       const response = await apiSpotify.get(
+<<<<<<< HEAD
         `/artists?ids=246dkjvS1zLTtiykXe5h60,7dGJo4pcD2V6oG8kP0tJRR,2ye2Wgw4gimLv2eAKyk1NB,4S9EykWXhStSc15wEx8QFK,26dSoYclwsYLMAKD3tpOr4,4C4kpaAdp6aKSkguw40SsU,1pk1stIyHnuK6lXZ8QiNKt,1mvpEXClANunyiHFtAXCxt,5K4W6rqBFWDnAN6FQUkS6x,1YOVBTvznjiDvtAj4ExHeo,1HY2Jd0NmPuamShAr6KMms,06HL4z0CvFAxyc27GXpf02,78nr1pVnDR7qZH6QbVMYZf,2YZyLoL8N0Wb9xBt1NhZWg,4WRkJpqyrKEdwhrFlCrI4A,1dfeR4HaWDbWqFHLkxsg1d,0jOs0wnXCu1bGGP7kh5uIu,29CQLw9uLWsl8Qkz9holfr`
+=======
+        `/artists?ids=246dkjvS1zLTtiykXe5h60,7dGJo4pcD2V6oG8kP0tJRR,2ye2Wgw4gimLv2eAKyk1NB,4S9EykWXhStSc15wEx8QFK,26dSoYclwsYLMAKD3tpOr4,4C4kpaAdp6aKSkguw40SsU,1pk1stIyHnuK6lXZ8QiNKt,1mvpEXClANunyiHFtAXCxt,5K4W6rqBFWDnAN6FQUkS6x,1YOVBTvznjiDvtAj4ExHeo,1HY2Jd0NmPuamShAr6KMms,06HL4z0CvFAxyc27GXpf02,78nr1pVnDR7qZH6QbVMYZf,2YZyLoL8N0Wb9xBt1NhZWg,3WrFJ7ztbogyGnTHbHJFl2,1dfeR4HaWDbWqFHLkxsg1d`
+>>>>>>> 1906f4aa604a56c116b6450acd802da3ece58fe2
       );
 
       const songsList = response?.data?.artists?.map((s) => ({
