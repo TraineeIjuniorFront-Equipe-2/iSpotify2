@@ -45,6 +45,11 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Sobre os tokens da API
+
+Caso os artistas não estejam aparecendo na página de artistas será necessário atualizar o token que pode ser adquirido selecionando o scopo ugc-image-upload, copiando um token e colocando na const token do componente App.js.
+
+Site do token: https://developer.spotify.com/console/get-artist/
 
 ## Contruibuindo
 
