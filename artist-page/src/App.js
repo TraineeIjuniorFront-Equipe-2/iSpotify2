@@ -10,13 +10,17 @@ import MyAccount from "./pages/MyAccount";
 import "./App.css";
 
 function App() {
+  const usuario = true;
+  if (usuario) {
+     <Navigate to="/home" />;
+  }
   return (
     <Routes>
       <Route path="/" element={<LoginPage />} />
       <Route
         path="/home"
         element={
-          <ProtectedRoute user={true}>
+          <ProtectedRoute user={usuario}>
             <Home />
           </ProtectedRoute>
         }
@@ -24,7 +28,7 @@ function App() {
       <Route
         path="/favSongs"
         element={
-          <ProtectedRoute user={true}>
+          <ProtectedRoute user={usuario}>
             <FavSongs />
           </ProtectedRoute>
         }
@@ -32,7 +36,7 @@ function App() {
       <Route
         path="/myAccount"
         element={
-          <ProtectedRoute user={true}>
+          <ProtectedRoute user={usuario}>
             <MyAccount />
           </ProtectedRoute>
         }
@@ -40,7 +44,7 @@ function App() {
       <Route
         path="/artist/:id"
         element={
-          <ProtectedRoute user={true}>
+          <ProtectedRoute user={usuario}>
             <ArtistPage />
           </ProtectedRoute>
         }
@@ -48,7 +52,7 @@ function App() {
       <Route
         path="/register"
         element={
-          <ProtectedRoute user={true}>
+          <ProtectedRoute user={usuario}>
             <Register />
           </ProtectedRoute>
         }
@@ -63,6 +67,5 @@ const ProtectedRoute = ({ user, children }) => {
   if (!user) {
     return <Navigate to="/" />;
   }
-
   return children;
 };
