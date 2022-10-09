@@ -13,6 +13,10 @@ function MyAccount() {
   const [openPasswordModal, setOpenPasswordModal] = useState(false);
   const [openEmailModal, setOpenEmailModal] = useState(false);
 
+  useEffect(() => {
+    document.title = "Minha Conta";
+  });
+
   const getUserData = async () => {
     try {
       const response = await api.get("/users/user");

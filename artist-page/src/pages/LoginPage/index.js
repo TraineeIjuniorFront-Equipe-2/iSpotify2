@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 
@@ -7,6 +7,10 @@ import { api } from "../../api";
 import "./style.css";
 
 function LoginPage() {
+    useEffect(() => {
+      document.title = "Login";
+    });
+
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");

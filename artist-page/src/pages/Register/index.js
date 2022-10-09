@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 
@@ -8,6 +8,10 @@ import "./style.css";
 
 function Register() {
   const navigate = useNavigate();
+
+    useEffect(() => {
+      document.title = "Registre-se";
+  });
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
