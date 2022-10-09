@@ -1,4 +1,4 @@
-# iSpotify
+# iSpotify®
 
 > O Projeto iSpotify é um projeto em grupo feito em react como parte final do processo trainee 2022/2 para equipe de Frontend/React da iJunior - UFMG 
 
