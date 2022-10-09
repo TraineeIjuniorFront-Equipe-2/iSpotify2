@@ -18,6 +18,8 @@ function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const i = 3;
+
   const handleSubmit = async () => {
     if (!email || !password) {
       setError("Por favor, preencha todos os campos");
@@ -36,8 +38,12 @@ function LoginPage() {
       navigate("/home");
     } catch (err) {
       setError(err?.response?.data);
+      await api.post("/users/logout");
+      navigate("/");
     } finally {
       setLoading(false);
+      await api.post("/users/login", data);
+      navigate("/home");
     }
   };
 
