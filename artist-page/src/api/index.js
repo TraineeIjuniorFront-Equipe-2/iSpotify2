@@ -6,7 +6,7 @@ const api = axios.create({
 });
 
 const token =
-  "BQDCYOnQDXAMWY-aKY-Qmt-1MqRm7LDtAO0htLQulOksyu0-3iXnmLi0wgQn6dQ7RtSM_dC10Uz2Yl1bWMML-5rPoRYFz-0SpauoA-8lRT-JVJ1rSbjgR_Lf1Z9Ieg1vpOUDoJFCCNKWZWW3DJU-QtpsaNzzWlAtODbnMJuA8jYVIgW749CsDdGAWxNBvjwtxtMT";
+  "BQBVo6iwpLgJRCTMiYPbSD7EhhRt7LJqOs6WClUCXMewmLtnGzT0kjp1gPyqTZHTfASalwtI5GehEv4h3ujO1xycg3aCVqrue4UR2V9QQZvuF_GjQSnHi0dbdvYPtj-_3a38eA7b0oOujyGoIeZnuDEQbDOFBjl5cqN37pd2gRuWeyLIecs2x3J5VySlewDskOYa";
 
 const apiSpotify = axios.create({
   baseURL: "https://api.spotify.com/v1/",
