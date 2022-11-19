@@ -3,7 +3,6 @@ import favSong from "../../../assets/icons/favSong.svg";
 
 import MusicTableFav from "../MusicTableFav";
 import AlbumIconsFav from "../AlbumIconsFav";
-import { musicData } from "../../Album/DashboardS/data";
 
 function Dashboard() {
   //carregar dados salvos no localstorage
@@ -24,7 +23,7 @@ function Dashboard() {
         <div className="iconsFav">
           <AlbumIconsFav />
         </div>
-        <MusicTableFav musicData={musicData} />
+        <MusicTableFav />
       </div>
     </div>
   );

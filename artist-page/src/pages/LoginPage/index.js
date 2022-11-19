@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 
@@ -7,12 +7,18 @@ import { api } from "../../api";
 import "./style.css";
 
 function LoginPage() {
+    useEffect(() => {
+      document.title = "Login";
+    });
+
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const i = 3;
 
   const handleSubmit = async () => {
     if (!email || !password) {
@@ -32,8 +38,12 @@ function LoginPage() {
       navigate("/home");
     } catch (err) {
       setError(err?.response?.data);
+      await api.post("/users/logout");
+      navigate("/");
     } finally {
       setLoading(false);
+      await api.post("/users/login", data);
+      navigate("/home");
     }
   };
 

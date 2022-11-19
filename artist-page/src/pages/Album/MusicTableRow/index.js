@@ -1,12 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import HeartFilled from "../../../assets/icons/heartFilled";
 import trash from "../../../assets/icons/trash.svg";
 
 import "./style.css";
 
-const MusicTableRow = ({ index, name, singer, album, onDelete, img }) => {
+const MusicTableRow = ({ index, name, singer, album, img, id }) => {
   const [isLiked, setIsLiked] = useState(false);
+  const [likedSongsList, setLikedSongsList] = useState([]);
+
+  useEffect(() => {
+    const likedSongs = JSON.parse(localStorage.getItem("songs"));
+
+    if (likedSongs) {
+      setLikedSongsList(likedSongs);
+      likedSongs?.forEach((e) => {
+        e?.id === id && setIsLiked(true);
+      });
+    }
+  }, []);
+
+  const handleLikeSong = () => {
+    const songData = {
+      name,
+      singer,
+      album,
+      img,
+      id,
+    };
+
+    if (!isLiked) {
+      const newList = [songData, ...likedSongsList];
+      setLikedSongsList(newList);
+
+      localStorage.setItem("songs", JSON.stringify(newList));
+    } else {
+      const newList = likedSongsList?.filter((e) => e?.id !== id);
+      setLikedSongsList(newList);
+      localStorage.setItem("songs", JSON.stringify(newList));
+    }
+
+    setIsLiked(!isLiked);
+  };
 
   const saveLiked = {
     name: name,
@@ -32,14 +67,17 @@ const MusicTableRow = ({ index, name, singer, album, onDelete, img }) => {
             onClick={() => {
               setIsLiked(!isLiked);
               localStorage.setItem("saveLiked", JSON.stringify(saveLiked));
-              localStorage.setItem("saveLiked1", JSON.stringify(saveLiked));
+              localStorage.setItem("saveLiked", JSON.stringify(saveLiked));
+
+              handleLikeSong();
+              //salvaria um json(vetor) contendo os dados das musicas curtidas
             }}
           >
             <HeartFilled isFilled={isLiked} />
           </button>
-          <button onClick={onDelete}>
-            <img src={trash} alt="" />
-          </button>
+          {/*<button onClick={onDelete}>
+             <img src={trash} alt="" />
+            </button>*/}
         </div>
       </div>
     </div>
